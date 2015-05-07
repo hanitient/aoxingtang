@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+<div id="tea" class="carousel slide" data-ride="carousel">
+
+<!--
+<div class="col-md-6">
+           <%= image_tag("tea/1.jpg", alt: "1",id:"p") %>
+</div>
+-->
+
+<div class="col-md-6">
+<h1 id="title2"><%= medicine.name %></h1>
+</div>
+<p>
+<%= medicine.describe %>
+</p>
+</div>
+<div class="col-md-2 col-md-offset-6">
+<%= link_to "看看", medicine, class: "btn btn-default",  id:"regbutton2" %>
+<%= link_to "删除商品",   @medicine, method: :delete,data: { confirm: "确定吗？" },class: "btn btn-danger" %>
+</div>
+</div>
+</div>
+<hr>

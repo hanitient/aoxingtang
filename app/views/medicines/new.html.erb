@@ -1,0 +1,31 @@
+<% provide(:title, '上传商品') %>
+
+<h1>上传商品</h1>
+
+<div class="row">
+
+<div class="col-md-6 col-md-offset-3">
+
+<%= form_for(@medicine) do |f| %>
+<%= render 'shared/error_messages2' %>
+
+<%= f.label :name,"商品名" %>
+<%= f.text_field :name ,class: 'form-control'%>
+
+<%= f.label :kind, "种类"%>
+ <%= f.select :kind,  ["基本药物","中药饮品","处方药","保健品","医疗器械","汤料","凉茶","家庭药箱","其他"],class: "selectpicker" %>
+
+
+<%= f.label :describe ,"描述"%>
+<%= f.text_area :describe, class: 'form-control',id:"text1",placeholder:"输入商品的描述" %>
+
+<%= f.label :price," 价格 (RMB¥)" %>
+<%= f.number_field :price ,class: 'form-control',placeholder:"请输入整数"%>
+
+<%= f.submit "上传", class: "btn btn-primary" %>
+<% end %>
+</div>
+
+
+
+</div>
