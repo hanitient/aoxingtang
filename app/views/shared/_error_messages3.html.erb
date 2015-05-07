@@ -1,11 +1,11 @@
-<% if @diy.errors.any? %>
+<% if @order.errors.any? %>
 <div id="error_explanation">
 <div class="alert alert-danger">
 
-有 <%= pluralize(@diy.errors.count,"") %>处错误 
+有 <%= pluralize(@order.errors.count,"") %>处错误 
 </div>
 <ul>
-<% @diy.errors.full_messages.each do |msg| %>
+<% @order.errors.full_messages.each do |msg| %>
 <li><%= msg %></li>
 <% end %>
 </ul>

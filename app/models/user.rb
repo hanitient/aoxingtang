@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	has_many :orders,dependent: :destroy
+
 	validates :name, presence: true
 	validates :phone, presence: true,uniqueness: true
 	validates :address, presence: true

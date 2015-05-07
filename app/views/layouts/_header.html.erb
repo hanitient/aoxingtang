@@ -10,11 +10,12 @@
 我<b class="caret"></b>
 </a>
 <ul class="dropdown-menu">
-<li><%= link_to "我的订单", "#" %></li>
+<li><%= link_to "我的订单", myorder_path %></li>
 <li><%= link_to "我的资料（开发）", current_user %></li>
 <li><%= link_to "设置（开发）", edit_user_path(current_user) %></li>
 <li><%= link_to "所有商品", allitems_path %></li>
 <li><%= link_to "上传饮品(后台)",new_path %></li>
+<li><%= link_to "所有顾客订单",allorders_path %></li>
 <li class="divider"></li>
 <li>
 <%= link_to "登出", logout_path, method: "delete" %>

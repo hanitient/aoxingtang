@@ -1,3 +1,4 @@
 名字:<%=@medicine.name %>,品种：<%= @medicine.kind%>,描述:<%= @medicine.describe%>,价格:<%= @medicine.price%>
 <%= link_to "删除商品",   @medicine, method: :delete,data: { confirm: "确定吗？" },class: "btn btn-danger" %>
 <%= link_to "修改商品", edit_path,class: "btn btn-warning" %>
+<%= link_to "购买", neworder_path,class: "btn btn-primary",:method => :post%>
