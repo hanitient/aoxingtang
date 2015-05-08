@@ -1,8 +1,16 @@
 class UsersController < ApplicationController
     def new
+      @user=User.new
     end
 
     def create
+      @user = User.new(user_params)
+      if @user.save
+       log_in @user
+       redirect_to myorder_path
+      else
+       render 'new'
+      end
    	end
 
    	def index
@@ -21,5 +29,13 @@ class UsersController < ApplicationController
       end  
       render :inline => @user.to_json
     end
+
+    private
+   #引入健壮参数以防止用户所有哈希数据都能被初始化修改
+    def user_params
+      params.require(:user).permit(:name, :phone, :password,
+      :password_confirmation,:address)
+    end
+
 
 end

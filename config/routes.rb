@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
-   
-  get 'sessions/new'
-
   root 'medicines#new'
   resources :medicines
   get 'new'=>'medicines#new'
   post 'new'=>'medicines#create'
   get'allitems' => 'medicines#index'
   get 'edit' => 'medicines#edit'
+  
+  resources :users
+  get 'signup' => 'users#new'
+  post'signup' => 'users#create'
+
+  get 'sessions/new'
+
+
 
   get 'jsonall' => 'medicines#all'
   get 'jsonkind1' => 'medicines#kind1'
@@ -25,7 +30,7 @@ Rails.application.routes.draw do
   get'login'=> 'sessions#new'
   post'login'=> 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  resources :users
+
 
   resources :orders
   get 'neworder'=>'orders#new'
