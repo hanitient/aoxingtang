@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 <%= render 'layouts/shim' %>
 </head>
-<%= render 'layouts/header' %>
+<%= render 'layouts/header' if $device==2%>
 <body>
 <div class="container">
 

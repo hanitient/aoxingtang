@@ -28,4 +28,10 @@ class OrdersController < ApplicationController
       @order=Order.where(:user_id => current_user.id)
 	end
 
+	def jsonindex
+	end
+
+	def jsonmyorder
+	end
+
 end

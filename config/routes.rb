@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   get 'jsonkind8' => 'medicines#kind8'
   get 'jsonkind9' => 'medicines#kind9'
 
- 
+
+  get'identify'=> 'users#identify'
   get'login'=> 'sessions#new'
   post'login'=> 'sessions#create'
   delete 'logout' => 'sessions#destroy'
