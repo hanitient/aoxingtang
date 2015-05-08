@@ -14,10 +14,12 @@ class UsersController < ApplicationController
     end
 
     def identify
-      @user=current_user
       if logged_in?
+      @user=current_user
+      else
+      @user=-1
+      end  
       render :inline => @user.to_json
-      end   
     end
 
 end

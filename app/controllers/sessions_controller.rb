@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user 
       if user.authenticate(params[:session][:password])
          log_in user
-         redirect_to user
+         redirect_to myorder_path
       else
       	flash.now[:danger] = '密码不正确'
         render 'new'
