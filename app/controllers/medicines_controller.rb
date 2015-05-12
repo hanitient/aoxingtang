@@ -1,6 +1,6 @@
 class MedicinesController < ApplicationController
 	$m
-
+  $medicine=Medicine.new
 	def new 
 	  @medicine=Medicine.new
 	end
@@ -105,11 +105,10 @@ class MedicinesController < ApplicationController
     end
 
     def test
-        @medicine = Medicine.new(medicine_params)
+        $medicine= Medicine.new(medicine_params)
     end
 
     def showtest
-        @medicine=Medicine.new
     end
 
 	private
