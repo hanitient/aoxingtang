@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
        log_in @user
-       redirect_to myorder_path
+       redirect_to @user
       else
        render 'new'
       end
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
      #显示用户资料
     def show
       @user=User.find(params[:id])
+      render :inline => @user.to_json  
     end
 
     def identify

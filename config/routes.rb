@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   get'login'=> 'sessions#new'
   post'login'=> 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+  get 'wrong' =>'sessions#wrong'
+  get 'blank' => 'sessions#blank'
 
 
   resources :orders
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
   post 'neworder'=>'orders#create'
   get 'allorders'=>'orders#index'
   get 'myorder'=>'orders#myorder'
+  get 'allordersjson' =>'orders#jsonindex'
 
   post 'test'=>'medicines#test'
   get 'test'=>'medicines#showtest'

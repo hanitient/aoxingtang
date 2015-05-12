@@ -7,14 +7,12 @@ class SessionsController < ApplicationController
     if user 
       if user.authenticate(params[:session][:password])
          log_in user
-         redirect_to myorder_path
+         redirect_to user
       else
-      	flash.now[:danger] = '密码不正确'
-        render 'new'
+      	redirect_to wrong_path
       end
     else
-      flash.now[:danger] = '用户名不存在'
-      render 'new'
+      redirect_to blank_path
      end
   end
 
@@ -22,4 +20,17 @@ class SessionsController < ApplicationController
   	log_out
     redirect_to root_url
   end
+  
+  #wrong password
+  def wrong
+    @wrong="用户名或密码错误！"
+    render :inline => @wrong.to_json  
+  end
+
+  #non this person
+  def blank
+    @blank="用户名不存在！"
+    render :inline => @blank.to_json  
+  end
+
 end

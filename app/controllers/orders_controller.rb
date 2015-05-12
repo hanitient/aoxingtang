@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 	@order=current_user.orders.build(name:$m.name,address:current_user.address,number:1)
   	if @order.save
       redirect_to @order
-        	   flash[:success] = "商品已购买！"
+      flash[:success] = "商品已购买！"
     else
       render 'new'
     end
@@ -29,9 +29,8 @@ class OrdersController < ApplicationController
 	end
 
 	def jsonindex
-	end
-
-	def jsonmyorder
+		@order=Order.all
+		render :inline => @order.to_json
 	end
 
 end

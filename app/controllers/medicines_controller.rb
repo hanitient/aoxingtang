@@ -113,7 +113,7 @@ class MedicinesController < ApplicationController
 
 	private
 	def medicine_params
-	  params.require(:medicine).permit(:name, :kind, :describe,:price)
+	  params.require(:medicine).permit(:name, :kind, :describe,:price,:picture)
 	end
 
 end
