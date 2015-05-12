@@ -7,9 +7,17 @@ class MedicinesController < ApplicationController
 
 	def create
 	  @medicine = Medicine.new(medicine_params)
-  	if @medicine.save
-      redirect_to @medicine
+  	 if @medicine.save
+       flash[:success] = "商品已删除！"
+       respond_to do |format|
+        format.html { redirect_to @medicine }
+        format.js
+       end
     else
+      respond_to do |format|
+        format.html { redirect_to @medicine }
+        format.js
+       end
       render 'new'
     end
 	end
@@ -94,6 +102,14 @@ class MedicinesController < ApplicationController
     def kind9
       @medicines=Medicine.where(:kind => '其他')
       render :inline => @medicines.to_json  
+    end
+
+    def test
+        @medicine = Medicine.new(medicine_params)
+    end
+
+    def showtest
+        @medicine=Medicine.new
     end
 
 	private

@@ -37,6 +37,9 @@ Rails.application.routes.draw do
   post 'neworder'=>'orders#create'
   get 'allorders'=>'orders#index'
   get 'myorder'=>'orders#myorder'
+
+  post 'test'=>'medicines#test'
+  get 'test'=>'medicines#showtest'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
