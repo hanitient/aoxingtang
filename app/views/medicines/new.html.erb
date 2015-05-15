@@ -6,11 +6,11 @@
 <%= form_for(@medicine, html: { multipart: true }) do |f| %>
 <%= render 'shared/error_messages2' %>
 
-<%= f.label :name,"商品名" %>
+<%= f.label :name,"商品名（新闻题目）" %>
 <%= f.text_field :name ,class: 'form-control'%>
 
 <%= f.label :kind, "种类"%>
- <%= f.select :kind,  ["基本药物","中药饮品","处方药","保健品","医疗器械","汤料","凉茶","家庭药箱","其他"],class: "selectpicker" %>
+ <%= f.select :kind,  ["基本药物","中药饮品","处方药","保健品","医疗器械","汤料","凉茶","家庭药箱","其他","新闻"],class: "selectpicker" %>
 
 
 <%= f.label :describe ,"描述"%>

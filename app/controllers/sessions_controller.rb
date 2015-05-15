@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       if user.authenticate(params[:session][:password])
          log_in user
          redirect_to user
+         $user_id=user.id
       else
       	redirect_to wrong_path
       end

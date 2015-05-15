@@ -104,6 +104,11 @@ class MedicinesController < ApplicationController
       render :inline => @medicines.to_json  
     end
 
+     def kind10
+      @medicines=Medicine.where(:kind => '新闻')
+      render :inline => @medicines.to_json  
+    end
+
     def test
         $medicine= Medicine.new(medicine_params)
     end

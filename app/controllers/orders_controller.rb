@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+	$user_id
 	def new
       @order=Order.new
 	end
@@ -25,7 +26,9 @@ class OrdersController < ApplicationController
 	end
 
 	def myorder
-      @order=Order.where(:user_id => current_user.id)
+      #@order=Order.where(:user_id => current_user.id)
+      @order=Order.where(:user_id => $user_id)
+      render :inline => @order.to_json
 	end
 
 	def jsonindex
