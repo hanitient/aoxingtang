@@ -25,7 +25,7 @@ class MedicinesController < ApplicationController
 	def destroy
 	  Medicine.find(params[:id]).destroy
       flash[:success] = "商品已删除！"
-      redirect_to root_path
+      redirect_to allitems_path
 	end
 
 	def index
