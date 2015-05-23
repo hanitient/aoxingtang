@@ -55,7 +55,7 @@ class MedicinesController < ApplicationController
     end
 
     def all
-      @medicines=Medicine.all
+      @medicines=Medicine.all-Medicine.where(:kind => '新闻')
       render :inline => @medicines.to_json   
     end
 
